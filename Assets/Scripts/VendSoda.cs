@@ -14,11 +14,12 @@ public class VendSoda : MonoBehaviour
 
     private void Start()
     {
-        place = new Vector3(spawnPoint.transform.localPosition.x, spawnPoint.transform.localPosition.y, spawnPoint.transform.localPosition.z);
+        place = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(soda, place, Quaternion.identity); 
+        GameObject can = Instantiate(soda, place, Quaternion.identity);
+        can.AddComponent<Rigidbody>(); 
     }
 }
