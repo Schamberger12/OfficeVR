@@ -30,7 +30,7 @@ public class ChangeSize : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("up"))
+        if (Input.GetKey(KeyCode.U))
         {
 
             room.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime; 
@@ -40,7 +40,7 @@ public class ChangeSize : MonoBehaviour
                 room.transform.localScale = new Vector3(minScale, minScale, minScale); 
             }
         }
-        if (Input.GetKey("down"))
+        if (Input.GetKey(KeyCode.I))
         {
             room.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime;
             if (room.transform.localScale == new Vector3(maxScale, maxScale, maxScale))
@@ -49,19 +49,19 @@ public class ChangeSize : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp("up"))
+        if (Input.GetKeyUp(KeyCode.U))
         {
             timer = 0f; 
         }
-        if (Input.GetKeyUp("down"))
+        if (Input.GetKeyUp(KeyCode.I))
         {
             timer = 0f; 
         }
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown(KeyCode.U))
         {
             timer = 0f; 
         }
-        if (Input.GetKeyDown("down"))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             timer = 0f; 
         }

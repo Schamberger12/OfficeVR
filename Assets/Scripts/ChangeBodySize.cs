@@ -7,13 +7,8 @@ public class ChangeBodySize : MonoBehaviour
 
 
     [SerializeField]
-    GameObject simulatedCamera;
-
-    //[SerializeField]
-    //GameObject VRCamera;
-
-    //[SerializeField]
-    //GameObject bodyRepresentation;
+    GameObject body_representation; 
+    
 
     float timer = 0f;
 
@@ -21,43 +16,40 @@ public class ChangeBodySize : MonoBehaviour
     float minScale = 0.3f;
 
 
-
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("up"))
+        if (Input.GetKey(KeyCode.U) || Input.GetButton("VRTK_Axis12_RightGrip"))
         {
 
-            simulatedCamera.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime;
+            body_representation.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime;
 
-            if (simulatedCamera.transform.localScale == new Vector3(minScale, minScale, minScale))
+            if (body_representation.transform.localScale.x >= maxScale)
             {
-                simulatedCamera.transform.localScale = new Vector3(minScale, minScale, minScale);
+                body_representation.transform.localScale = new Vector3(maxScale, maxScale, maxScale);
             }
         }
-        if (Input.GetKey("down"))
+        if (Input.GetKey(KeyCode.I) || Input.GetButton("VRTK_Axis11_LeftGrip"))
         {
-            simulatedCamera.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime;
-            if (simulatedCamera.transform.localScale == new Vector3(maxScale, maxScale, maxScale))
+            body_representation.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime;
+            if (body_representation.transform.localScale.x <= minScale)
             {
-                simulatedCamera.transform.localScale = new Vector3(maxScale, maxScale, maxScale);
+                body_representation.transform.localScale = new Vector3(minScale, minScale, minScale);
             }
         }
 
-        if (Input.GetKeyUp("up"))
+        if (Input.GetKeyUp(KeyCode.U) || Input.GetButtonUp("VRTK_Axis12_RightGrip"))
         {
             timer = 0f;
         }
-        if (Input.GetKeyUp("down"))
+        if (Input.GetKeyUp(KeyCode.I) || Input.GetButtonUp("VRTK_Axis11_LeftGrip"))
         {
             timer = 0f;
         }
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown(KeyCode.U) || Input.GetButtonDown("VRTK_Axis12_RightGrip"))
         {
             timer = 0f;
         }
-        if (Input.GetKeyDown("down"))
+        if (Input.GetKeyDown(KeyCode.I) || Input.GetButtonDown("VRTK_Axis11_LeftGrip"))
         {
             timer = 0f;
         }

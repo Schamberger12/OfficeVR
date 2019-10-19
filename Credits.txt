@@ -19,3 +19,11 @@ String Improptu No. 1:
 Music from https://filmmusic.io
 "String Impromptu Number 1" by Kevin MacLeod (https://incompetech.com)
 License: CC BY (http://creativecommons.org/licenses/by/4.0/)
+
+Models:
+
+Coffee Mug:
+Gregory Schamberger(Me!)
+
+Dart Holder:
+Gregory Schamberger(Me!)
