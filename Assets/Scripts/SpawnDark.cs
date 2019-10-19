@@ -13,7 +13,7 @@ public class SpawnDark : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "dart_rzutka_obj (1) Variant")
+        if (other.gameObject.CompareTag("Dart"))
         {
             Instantiate(dart, spawnPoint.transform.localPosition, Quaternion.identity); 
         }
