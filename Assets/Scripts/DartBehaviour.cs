@@ -10,7 +10,7 @@ public class DartBehaviour : MonoBehaviour
     Collider boardCollider;
     Collider dartCollider; 
 
-    private void Start()
+    private void Awake()
     {
         boardCollider = dartBoard.GetComponent<Collider>();
         dartCollider = gameObject.GetComponent<Collider>(); 

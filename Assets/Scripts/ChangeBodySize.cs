@@ -12,7 +12,7 @@ public class ChangeBodySize : MonoBehaviour
 
     float timer = 0f;
 
-    float maxScale = 5f;
+    float maxScale = 2.2f;
     float minScale = 0.3f;
 
 
