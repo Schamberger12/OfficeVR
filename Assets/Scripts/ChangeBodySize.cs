@@ -18,7 +18,7 @@ public class ChangeBodySize : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.U) || Input.GetButton("VRTK_Axis12_RightGrip"))
+        if (Input.GetKey(KeyCode.U) || (Input.GetAxisRaw("VRTK_Axis12_RightGrip") != 0))
         {
 
             body_representation.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime;
@@ -28,7 +28,7 @@ public class ChangeBodySize : MonoBehaviour
                 body_representation.transform.localScale = new Vector3(maxScale, maxScale, maxScale);
             }
         }
-        if (Input.GetKey(KeyCode.I) || Input.GetButton("VRTK_Axis11_LeftGrip"))
+        if (Input.GetKey(KeyCode.I) || Input.GetAxisRaw("VRTK_Axis11_LeftGrip") != 0)
         {
             body_representation.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime;
             if (body_representation.transform.localScale.x <= minScale)
@@ -37,19 +37,19 @@ public class ChangeBodySize : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.U) || Input.GetButtonUp("VRTK_Axis12_RightGrip"))
+        if (Input.GetKeyUp(KeyCode.U) || Input.GetAxisRaw("VRTK_Axis12_RightGrip") == 0)
         {
             timer = 0f;
         }
-        if (Input.GetKeyUp(KeyCode.I) || Input.GetButtonUp("VRTK_Axis11_LeftGrip"))
+        if (Input.GetKeyUp(KeyCode.I) || Input.GetAxisRaw("VRTK_Axis11_LeftGrip") == 0)
         {
             timer = 0f;
         }
-        if (Input.GetKeyDown(KeyCode.U) || Input.GetButtonDown("VRTK_Axis12_RightGrip"))
+        if (Input.GetKeyDown(KeyCode.U) || Input.GetAxisRaw("VRTK_Axis12_RightGrip") == 0)
         {
             timer = 0f;
         }
-        if (Input.GetKeyDown(KeyCode.I) || Input.GetButtonDown("VRTK_Axis11_LeftGrip"))
+        if (Input.GetKeyDown(KeyCode.I) || Input.GetAxisRaw("VRTK_Axis11_LeftGrip") == 0)
         {
             timer = 0f;
         }
